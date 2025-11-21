@@ -3,6 +3,7 @@ import aiohttp
 import asyncio
 import json
 import logging
+
 from api.http_headers import number_rollcall_headers
 
 if not logging.getLogger().hasHandlers():

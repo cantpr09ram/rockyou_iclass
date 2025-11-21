@@ -1,6 +1,7 @@
 import json
-from api.http_headers import radar_headers
 import logging
+
+from api.http_headers import radar_headers
 
 if not logging.getLogger().hasHandlers():
     logging.basicConfig(
@@ -8,6 +9,7 @@ if not logging.getLogger().hasHandlers():
     )
 
 logger = logging.getLogger(__name__)
+
 
 def answer_rollcall_Radar(session, rollcall_id):
     url = (

@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "rockyou-iclass"
 version = "0.1.0"
@@ -8,4 +12,16 @@ dependencies = [
     "aiohttp>=3.13.2",
     "python-dotenv>=1.2.1",
     "requests>=2.32.5",
+]
+
+[project.scripts]
+rollcall = "main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["api"]
+only-include = [
+    "main.py",
+    "getrollcall.py",
+    "sendNum.py",
+    "sendRadar.py",
 ]
