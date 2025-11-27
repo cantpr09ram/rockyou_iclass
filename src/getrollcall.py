@@ -27,15 +27,12 @@ def wait_for_rollcall(session: requests.Session, sec: int = 10) -> tuple[int, st
             response = session.get(url)
             response.raise_for_status()
             data = response.json()
-            rollcall_id = ""
+            previous_rollcall_id = None
             rollcalls = data.get("rollcalls", [])
             for rollcall in rollcalls:
-                if rollcall.get("rollcall_id"):
-                    logger.info(
-                        "Found rollcall: ID = %s, Source = %s",
-                        rollcall["rollcall_id"],
-                        rollcall["source"],
-                    )
+                if rollcall.get("rollcall_id") and rollcall["rollcall_id"] != previous_rollcall_id:
+                    logger.info("Found rollcall: ID = %s, Source = %s", rollcall["rollcall_id"], rollcall["source"],)
+                    previous_rollcall_id = rollcall["rollcall_id"]
                     return rollcall["rollcall_id"], rollcall["source"]
 
             logger.info("Rollcall not found yet. Waiting %s seconds...", sec)
