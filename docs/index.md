@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+---
+hide:
+  - toc
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+#Getting Start
 
-## Commands
+>The problem is not the students. The problem is how we teach them.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+tenko is a tool help you get better score at school.
+for student in 
 
-## Project layout
+- [Tankang University](https://www.tku.edu.tw/)
+- [Fu Jen Catholic University](https://www.fju.edu.tw/index.jsp)
+- [Asia University](https://www.asia.edu.tw/)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+more coming Soon
